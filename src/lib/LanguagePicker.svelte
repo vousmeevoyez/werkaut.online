@@ -1,19 +1,13 @@
 <script>
-  import {
-    Chip
-  } from 'konsta/svelte';
-  import { t, locale, locales } from "$i18n";
+	import { locale, locales } from '$i18n';
 </script>
-<div class="flex justify-center">
- <Chip class="m-0.5">
-    <div>
-       <br>
-       <br>
-       <div class="flex items-center">
-       <svg class=`h-6 w-8 mr-3 bg-${locales[locale]["flag"]}`/>
-       <p class="text-white">Indonesia</p>
-       </div>
-    </div>
- </Chip>
-</div>
 
+<select
+	class="float-right"
+	style="background-color: transparent; color: white;"
+	bind:value={$locale}
+>
+	{#each locales as l}
+		<option value={l}>{l.toUpperCase()}</option>
+	{/each}
+</select>

@@ -1,4 +1,5 @@
-import adapter from '@sveltejs/adapter-auto';
+// import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import preprocess from 'svelte-preprocess';
 
@@ -11,6 +12,9 @@ const config = {
 		alias: {
 			$i18n: 'src/i18n',
 			$lib: 'src/lib'
+		},
+		paths: {
+			base: process.env.NODE_ENV === 'production' ? '/sveltekit-gh-pages' : ''
 		}
 	},
 	preprocess: [
