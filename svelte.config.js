@@ -14,7 +14,7 @@ const config = {
 			$lib: 'src/lib'
 		},
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/sveltekit-gh-pages' : ''
+			base: process.env.NODE_ENV === 'production' ? '/werkaut.online' : ''
 		}
 	},
 	preprocess: [
